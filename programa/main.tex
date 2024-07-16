@@ -1,0 +1,418 @@
+\documentclass[11pt]{article}
+\input{../auxiliar/tex/encabezado.tex}
+\input{../auxiliar/tex/tikzlibrarybayesnet.code.tex}
+
+
+\newif\ifen
+\newif\ifes
+\newcommand{\en}[1]{\ifen#1\fi}
+\newcommand{\es}[1]{\ifes#1\fi}
+\entrue
+
+\title{\huge Electiva 2: \\ Inferencia Bayesiana Causal \\[0.4cm]  \LARGE Licenciatura en Ciencia de Datos UNSAM}
+
+\author{Gustavo Landfried$^{1,2}$}
+\affil{\footnotesize 1. Departamento de Computación. Facultad de Ciencias Exactas y Naturales. Universidad de Buenos Aires.}
+\affil{\vspace{-0.2cm}\footnotesize 2. Bayes Plurinacional}
+\affil[]{Correspondencia: \texttt{glandfried@dc.uba.ar}}
+
+\begin{document}
+
+\maketitle
+
+\section{Resumen}
+
+Las ciencias \emph{con} datos deben validar sus proposiciones (o argumentos causales) en sistemas naturales, que por ser abiertos contiene regiones que permanecen ocultas.
+¿Cuál es el verdadero estado de esas regiones en el presente, en el futuro y en el pasado?
+¿Tiene sentido que exista una ``verdad'' si justamente tenemos incertidumbre respecto de su verdadero valor?
+La respuesta unánime de todos los pueblos y culturas humanas alrededor del mundo es sí: no mentir.
+No asegurar o afirmar más de lo que se sabe, sin ocultar todo lo que sí se sabe.
+En términos matemáticos, maximizar incertidumbre dada la información disponible.
+
+% Parrafo
+
+Las ciencias \emph{con} datos deben interactuar con los sistemas naturales, al menos para conseguir los datos con los que evaluará sus hipótesis causales.
+Pero además, el hecho mismo de proponer hipótesis causales alternativas implica imaginar los mecanismos que vinculan las causas con sus efectos, y por lo tanto reflexionar sobre las potenciales intervenciones a través de la cuales orientar nuestro futuro individual en sus aspectos biológicos, socioculturales y ambientales.
+La cultura humana es en sí misma una herencia de conocimiento prácticos: antes de la transición cultural estuvimos en grave peligro de extinción, como se evidencia en la baja diversidad del genoma humano respecto de nuestros homínidos más cercanos\cite{Hrdy2009}; luego de la transición cultural, cuando el conocimiento que antes debía ser redescubierto individualmente pasó a ser un recurso común transmitido de generación en generación, la especie humana comenzó a ser capaz de ocupar todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes~\cite{Boyd2011}.
+
+% Parrafo
+
+El concepto mismo de organismo vivo supone considerar que existe un agente que interactúa con la naturaleza para sobrevivir y reproducirse.
+Desde el surgimiento de la primera forma de la materia que llamaríamos vida se fueron seleccionando por reproducción y supervivencia las formas alternativas que mejor se adaptaban a la naturaleza.
+La biomasa en la tierra es, en este sentido, la principal fuente de conocimientos causales medidos en términos de sus capacidades prácticas para la reproducción y la supervivencia.
+Las formas de vida más simples (virus, protozoa, archaea y bacterias) representan el 16\% de la biomasa en la tierra, las formas de vida que se alimentan del sol, agua y otro componentes químicos (plantas) representan el 82\%, y las formas de vida que necesitan alimentarse de otros seres (hongos y animales) representan el 2\%.
+
+% Parrafo
+
+La biomasa humana representa tan solo el $0.01$\% y las proyecciones indican que estamos a menos de un siglo del estancamiento).
+Este límite no está impuesto por la capacidad de la biosfera sino por nuestra incapacidad actual para integrarnos de forma orgánica en los sistemas ecológicos que la componen.
+Las instituciones culturales que habían emergido como resultado de diversas experiencia histórica exitosas alrededor del mundo de administración social de la interacción con los sistemas ecológicos locales fueron reemplazadas recientemente por instituciones externas, estatales o de mercado, produciendo devastadoras consecuencias ecológicas~~\cite{ostrom2010, ostrom1990, segato2013-colonialidad}.
+A pesar de todos los avances, la ciencia metropolitana no es capaz de compensar la pérdida de conocimientos milenarios provocada durante la colonial-modernidad, y como consecuencia de la masiva pérdida de la diversidad cultural global vivimos en la actualidad una grave crisis ecológica que no deja de profundizarse.
+
+% Parrafo
+
+Las reglas de la probabilidad se conocen desde finales del siglo 18 y se ha adoptado desde entonces como sistema de razonamiento en todas las ciencias con datos.
+Ellas son conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos (regla del producto) y predecir con la contribución de todas las hipótesis (regla de la suma).
+A lo largo de los siglos estas reglas fueron derivadas repetidas veces a partir de diversos principios~\cite{halpern2017-RAU2} y hasta la actualidad no se ha propuesto nada mejor en términos prácticos.
+Sin embargo, el costo computacional asociado a evaluar todo el espacio de hipótesis ha limitado históricamente su aplicación estricta.
+Hubo que esperar hasta las vísperas del siglo 21 para que fuera posible por primera computar las distribuciones de creencias óptimas dada la información disponible en todos los campos de las ciencia.
+
+% Parrafo
+
+Los modelos causales probabilísticos son hipótesis como cualquier otra y, por lo tanto, se evalúan en función de su capacidad predictiva, lo que hace que naturalmente prefiramos los modelos que generen menor sorpresa (única fuente de información).
+La característica principal de los argumentos (o teorías) causales es su capacidad de adaptarse (cambiar su estructura causal) en función del contexto~\cite{winn2012-causality}, como las intervenciones humanas o naturales.
+
+
+Es justamente esta capacidad de adaptación a los diversos contextos lo que hace que las teorías causales reales, que coinciden con la realidad causal subyacentes, tengan mejor capacidad predictiva en la totalidad de los contextos que el resto de teorías causales alternativas.
+
+%
+\section{Objetivos}
+
+\begin{mdframed}
+Esta materia está enfocada en la evaluación de argumentos causales alternativos mediante (aproximaciones a) el sistema de razonamiento de las ciencias con datos: la aplicación estricta de las reglas de la probabilidad.
+\end{mdframed}
+
+
+La Electiva 2 ``Inferencia Causal'' tiene por principal objetivo revisar los métodos desarrollados en las últimas décadas para: especificar matemáticamente los argumentos causales expresados en lenguaje natural mediante métodos gráficos intuitivos; precisar cómo la estructura causal influye en el flujo de inferencia entre las variables del modelo; identificar el efecto causal entre variables de un modelo causal en base a datos observacionales; y diseñar experimentos que permitan evaluar modelos causales alternativos; y tomar decisiones óptimas en contextos de incertidumbre.
+
+
+
+%
+% La materia está dividida en
+%
+%
+% La primera semana se revisa los fundamentos de la validación de proposiciones en contextos de incertidumbre, se introduce los métodos gráficos de especificación matemática de modelos causales, se presenta el comportamiento generativo de los modelos causales, y se evalúan modelos causales basados en daos generados de contextos (o estructuras subyacentes) constantes, mostrando que a veces es posible identificar tales estructuras y a veces no.
+%
+% % Parrafo
+%
+% La segunda semana está dedicada exclusivamente a la revisión de modelos con variables continuas que tienen solución analítica (distribuciones conjugadas Beta - Binomial, Categórica - Dirichlet, Gaussiana - Gaussiana). Se presentan tres ejemplos  (recomendaciones, Monty Hall extendido, habilidad) que deberán ser usados para estimar en-línea (enfoque de filtrado) variables dinámica temporalmente. Se presenta la conjugada Gaussiana - Gaussiana multivariada y el pseudo código de la regresión lineal bayesiana.
+%
+% % Parrafo
+%
+% La tercera semana introduce el problema computacional de la aplicación estricta de las reglas de la probabilidad y en los efectos secundarios (sobreajuste) de las aproximaciones mediante métodos de estimación puntual basado en funciones de costo ad-hoc (máxima verosimilitud, máximo a posteriori, validación cruzada). Se estudian los problemas de sobreajuste de la regresión lineal ajustada por mínimos cuadrados, por regularización L2 y por validación cruzada. Se muestra cómo la inferencia exacta (implementada la clase anterior) no tiene ninguno de estos problemas. Se estudian los ensambles de modelos líneas y los límites de la representatividad de ensambles finitos.
+%
+% % Parrafo
+%
+% La cuarta semana se estudia la estructura invariante presente en la construcción u operacionalización de todo dato empírico y se introducen los conceptos fundamentales de la teoría de la información.
+
+\section{Contenidos mínimos}
+
+
+\begin{enumerate}
+
+\item \textbf{Modelos gráficos y evaluación de modelo causal en contextos constantes}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] La validación de proposiciones en ciencias con datos según el principio de ``no mentir'': máxima incertidumbre dada la información disponible.
+Interpretación de las reglas de la probabilidad como la preservación de la creencia previa que sigue siendo compatible con el dato (regla del producto) y predicción con la contribución de todas las hipótesis (regla de la suma). Especificación gráfica de modelos causales basada en la notación de \emph{redes bayesianas}. Simulación de muestras a partir de modelos gráficos causales. Evaluación de modelos causales alternativos bajo contextos (o estructuras causales subyacentes) constantes. Casos identificables, y casos no identificables.
+\item[Taller:] Generación de base de datos sintéticas a partir de la especificación gráfica de modelos causales.
+Evaluación de modelos causales alternativos: un caso en los que se puede identificar el modelo subyacente (Monty Hall vs alternativa); y un caso en los que no se pueden identificar el modelo subyacente (A$\rightarrow$B vs B$\rightarrow$A).
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Samaja \cite{samaja1999-epistemologiaMetodologia}: 3.1 Descripción y explicación. - 3.2 Un ejemplo de descripción científica: la historia clínica. - 3.3 Estructura lógica del discurso descriptivo. - 3.4 Necesidad de una función de transducción entre la descripción y la tautología.
+\item Klimovsky \cite{klimovsky1994-desventuras}: Cap 4 Los enunciados científicos.
+%\item Lorenzano \cite{lorenzano2002-concepcionEstructuralista}:
+\item Bishop \cite{bishop2013-mbmlpaper}: 1. Introduction - 2. Model-based machine learning - 3. Bayesian inference - 4. Probabilistic graphical models
+\end{itemize}
+\end{description}
+
+\item \textbf{Aplicación estricta de las reglas de la probabilidad}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] Distribuciones conjugadas: Beta - Binomial, Categórica - Dirichlet, Gaussiana - Gaussiana univariada.
+Ejemplos: modelos de recomendación me-gusta/no-me-gusta, modelo Monty Hall extendido con estimación del sesgos de quien esconde el regalo, y modelo de habilidad con desempeño observable.
+Estimaciones en-línea (filtrado) de dinámicas temporales usando el último posterior como prior del siguiente evento.
+Explicación de los modelos lineales y su especificación gráfica.
+Presentación del posterior y evidencia analítica en modelos gaussianos multivariados.
+Pseudo código de la regresión lineal basada en la aplicación estricta de las reglas de la probabilidad.
+\item[Taller:] Completar las implementación de modelo de recomendación Beta-Binomial, del modelo Monty Hall Categórica-Dirichlet, y del modelo habilidad-desempeño Gaussiana-Gaussiana provisto por la cátedra.
+Estimación temporal en-línea mediante el uso del último posterior como prior del siguiente evento.
+Visualización de las estimaciones.
+Completar la implementación de regresión lineal bayesiana provista por la cátedra.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Bishop \cite{bishop2006-PRML} Cap 2.1 Binary Variables - 2.2 Multinomial Variables - 2.3 The Gaussian Distribution
+\end{itemize}
+\end{description}
+
+
+\item \textbf{Emergencia del sobreajuste por selección y el balance natural por evaluación.}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] El problema computacional de las reglas de la probabilidad. Aproximación de la inferencia exacta mediante métodos de estimación puntal basados en funciones de costo ad-hoc (máxima verosimilitud, máximo a posteriori y validación cruzada). Regresión lineal ajustada por mínimos cuadrados como ejemplo de máxima verosimilitud. Evaluación de modelos lineales alternativos y la emergencia del sobreajuste.
+Regresión lineal ajustada por regularizador L2 como ejemplo de máximo a posteriori y el efecto de la penalización L2 sobre la complejidad de los modelos.
+El sobreajuste remanente de la evaluación de modelos mediante validación cruzada.
+El balance natural mediante la evaluación completa del espacio de hipótesis (o modelos) mediante la aplicación estricta de las reglas de la probabilidad.
+La predicción mediante ensambles de modelos y los límites de representatividad de los ensambles finitos de modelos lineales.
+Presentación de Procesos Gaussianos.
+\item[Taller:]
+Completar la evaluación de modelos lineales alternativos mediante basada en la propia implementación de regresión lineal bayesiana.
+Visualizar el efecto que produce el prior sobre la evaluación de modelos.
+¿Los priors informativos penalizan los modelos más complejos, como señalan quienes usan los regularizadores L2?.
+Implementación de la predicción marginal del dato, integrando todos los modelos lineales (ensamble).
+Completar la implementación de procesos gaussianos y visualizar la predicción con diferentes parámetros.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Bishop \cite{bishop2006-PRML}: 1.1 Polynomial Curve Fitting - 1.2 Probability Theory - 1.3 Model Selection - 3.3 Bayesian Linear Regresion - 3.4 Bayesian Model Comparison - 6.4.1 Linear regression revisited - 6.4.2 Gaussian processes for regression
+\end{itemize}
+\end{description}
+
+
+\item \textbf{Sorpresa: el problema de la comunicación con la realidad.}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+El problema de la comunicación con la realidad.
+Definición de Base Empírica.
+El dato científico como construcción relativa a supuestos.
+Los elementos del esquema emisor-receptor de Shannon y la estructura invariante del dato científico.
+La naturaleza multiplicativa de la función de costo de la teoría de la probabilidad.
+La analogía con la tasa de crecimiento (ergódica) de los recursos en procesos de apuestas y la emergencia de la propiedad epistémica: la apuesta óptima no depende de cuánto ofrezca la casa de apuestas.
+Evaluación de sistemas de comunicación alternativos en base a su tasa de sorpresa, el caso de Monty Hall y su alternativa.
+Interpretación de entropía y entropía cruzada, ejemplos.
+Re-definición de ``no mentir'' como máxima entropía dadas las restricciones.
+Distribuciones de probabilidad exponencial como ejemplos de máxima entropía dada la información disponible.
+Aproximación de distribuciones de probabilidad por minimización de divergencia KL (expectation propagation) y KL inversa (variational inference): el ejemplo de la mixtura de guassianas.
+\item[Taller:] a. Simulación numérica de un problema de apuestas en el que una casa de apuestas paga $3$ por cara y $1.2$ por sello. Cómputo de la esperanza de los recursos. Diferencia respecto con las trayectoria de los recursos individuales en el tiempo. Optimización temporal de apuesta, numérica o analítica. b. Optimización numérica de la minimización de la divergencia KL y KL inversa entre una mixtura de gaussianas y una Gaussiana univariada.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Klimovsky \cite{klimovsky1994-desventuras}: Cap 2. La base empírica de la ciencia.
+\item Samaja \cite{samaja1999-epistemologiaMetodologia}: 3.5 Presentación del Concepto ``Matriz de Datos'' - 3.6.2 Algunos postulados para desarrollar la teoría clásica. - 3.6.3. Sobre el carácter general de las matrices de datos. - 3.6.4. Sistema de matrices. - 3.6.5. Sobre el puesto de los indicadores en la matriz de datos
+\item MacKay \cite{mackay2003-informationInferenceLearning}: 1.1 How can we achieve perfect communication over an imperfect, noisy communication channel? 2.4 Definition of entropy and related functions - 2.5 Decomposability of the entropy - 2.6 Gibbs' inequality - 4.1 How to measure the information content of a random variable?
+\item Kelly \cite{kelly1956-informationRate}: A New Interpretation of Information Rate.
+\end{itemize}
+\end{description}
+
+\item \textbf{Especificación de modelo por Factor Graph e inferencia por pasaje de mensajes}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+Método gráficos de especificación matemática de modelos causales probabilísticos mediante gráfos bipartitos entre variables y funciones, \emph{factor graph}.
+Algoritmo de inferencia óptimo (en complejidad computacional) basado en el pasaje descentralizado de mensajes entre los nodos del grafo, \emph{sum-product algorithm}.
+Ejemplos: el estimador ELO y el estimador de habilidad estado-del-arte en la industria del video juego.
+La aproximación analítica por \emph{expectation propagation}. Flujo de inferencia (independencia condicional) en las estructuras causales elementales: \emph{pipe}, \emph{fork}, \emph{colider}.
+Inferencia en el modelo alarma-terremoto (u otro que contenga las estructuras elementales) mediante una librería de Python desarrollada para resolver inferencia en modelos gráficos.
+Criterio d-separation.
+\item[Taller:]
+1. Dado una librería de python provista por la cátedra, que contiene en la clase \texttt{Gaussiana} los mensajes involucrados en el modelo de habilidad (operaciones \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/} y  \texttt{aprox}), completar la estructura sin terminar de la clase \texttt{Competencia}, en la que se actualizan los posteriors sobre las habilidades de las personas luego de observar un resultado ganar/perder de una competencias con 2 equipos de tamaño N.
+2. Dado una librería de python provista por la cátedra, que contiene la clase \texttt{Modelo} implementada como una red bipartita entre las clases \texttt{NodoVariable} y \texttt{NodoFuncion}, completar el algoritmo sin terminar \texttt{suma-producto}.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Bishop \cite{bishop2006-PRML} 8.2 Conditional Independence - 8.2.1 Three example graphs - 8.2.2 D-separation - 8.4 Inference in Graphical Models - 8.4.1 Inference on a chain - 8.4.2 Trees - 8.4.3 Factor graphs - 8.4.4 The sum-product algorithm - 8.4.7 Loopy belief propagation
+\item Neal \cite{neal2020}: 3. The Flow of Association and
+Causation in Graphs
+\end{itemize}
+\end{description}
+
+\vspace{0.1cm}
+\item \textbf{Teorías causales.}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+Revisión del problema de evaluación de los modelos $A\rightarrow B$ y $B\rightarrow A$ en contextos (o estructuras causales subyacentes) constantes.
+Introducción a los contextos (o estructuras causales subyacentes) dinámicas.
+El caso de las intervenciones humanas.
+La equivalencia entre las definiciones de \emph{potential outcome} y \emph{do-operator}.
+Su especificación matemática a través de la notación de compuertas (\emph{gates}) en \emph{factor graph}.
+Definición de teorías causales basada en los sistemas de modelos causales integrados mediante \emph{gates}.
+Re-especificación de los modelo $A\rightarrow B$ y $B\rightarrow A$ como teorías causales.
+La simulación de datos a partir de teorías causales.
+Identificación de teorías causales alternativas bajo contextos dinámicos.
+\item[Taller:] Generación de datos sintéticos a partir de la especificación gráfica de una teoría causal.
+Evaluación de teorías causales alternativas, $A\rightarrow B$ y $B\rightarrow A$. Continúan con los ejercicios sin terminar de las clases anteriores.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Neal \cite{neal2020}: 2.1 Potential Outcomes and Individual Treatment Effects. - 4.1 The do-operator and Interventional Distributions.
+\item Winn \cite{winn2012-causality}: Causality with gates.
+\end{itemize}
+\end{description}
+
+% Parrafo
+
+\item \textbf{Niveles de razonamiento causal y estimación de efecto causal}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] La solución a la paradoja de Yule-Simpson: la necesidad de conocer la realidad causal subyacente para estimar el efecto causal.
+Los niveles de razonamiento causal (asociacional, intervencional, y contrafactual) como emergentes naturales del proceso generativo de las teorías causales.
+El ejemplo de la teoría causal Monty Hall.
+Flujo de inferencia en teorías causales y revisión de d-separation.
+\emph{Backdoor criterion} para identificar el efecto causal de una intervención usando únicamente la información de observaciones y el modelo causal subyacente.
+Ejemplo de estructuras causales y clasificación de variables como buenos, neutrales o malos para la identificación del efecto causal mediante backdoor criterion.
+Estimación del efecto causal en modelos lineales usando nuestra implementación de la regresión lineal bayesiana.
+\item[Taller:] Realizar inferencia del efecto causal para distintos pares de modelos causales lineales y conjunto de datos sintéticos mediante el uso de la regresión lineal bayesianas y la aplicación del criterio backdoor.
+Habrá ejemplos con buenos, neutros y malos controles.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Neal \cite{neal2020}: 4. Causal Models
+\item Cinelli \cite{cinelli2022-controls}: A crash course in good and bad controls
+\end{itemize}
+\end{description}
+
+% Parrafo
+
+
+\item \textbf{Semana libre para prácticas, exámenes o compensación por feriados}
+\vspace{-0.15cm}
+\begin{description}
+\item[Disponible para ser usada como mejor corresponda]
+\end{description}
+
+\item \textbf{Series temporales e inferencia en modelos de historia completa}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] Hiden Los problemas de propagar la información en una sola dirección, del pasado al futuro, mediante el uso del último posterior como prior del siguiente evento (enfoque de \emph{filtering}).
+Modelos de historia completa.
+El ejemplo del estimador de habilidad estado del arte en la industria del video juego.
+Algoritmo \emph{loopy belief propagation} para la propagación \emph{forward} - \emph{backward} de la información por todo el sistema o historia causal (enfoque de \emph{smoothing}).
+Discusión de un pseudo código para la implementación del algoritmo de inferencia iterativo en el modelo de estimación de habilidad.
+Diferencias entre las estimaciones \emph{filtering} y \emph{smoothing} en el caso de dos jugadores y dos partidas.
+Discusión de un pseudo código para la inferencia en el Monty Hall temporal con sesgo.
+\item[Taller:]
+1. Completar una implementación parcial provista por la cátedra del algoritmo de inferencia \emph{forward} - \emph{backward} en el modelo de estimación de habilidad.
+2. Estudio de la base de datos de la historia del tenis femenino y masculino WTA y ATP, y visualización de curvas de aprendizaje.
+3. Completar una implementación parcial provista por la cátedra del algoritmo de estimación del sesgo de quien esconde en el modelo Monty Hall temporal.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Dangauthier \cite{dangauthier2008-trueskillThroughTime}: Trueskill through time: Revisiting the history of chess.
+\item Bishop \cite{bishop2006-PRML}: 13.2.2 The forward-backward algorithm. - 13.2.3 The sum-product algorithm for the HMM. - 13.2.4 Scaling factors
+\end{itemize}
+\end{description}
+
+
+\item \textbf{Inferencia causal en series temporales}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+Series de tiempo lineales jerárquicas.
+Incorporación de tendencias locales y tendencias locales estacionarias, de periodicidades (como las estaciones del año) y de coeficientes dinámicos.
+Presentación de teorías alternativas sobre el aprendizaje que incluyen componentes biológicos individuales, económicos familiares y políticos nacionales.
+Evaluación de historias teóricas causales alternativas en contextos dinámicos.
+Intervenciones en series temporales.
+Evaluación del efecto causal en series temporales, contrafactuales.
+\item[Taller:]
+Completar la implementación, provista por la cátedra, de dos teorías alternativas de aprendizaje.
+Crear un conjunto de datos sintético a partir de una de ellas.
+Evaluar la capacidad predictiva de las teorías causales alternativas sobre el conjunto de datos sintético.
+Modificar el conjunto de datos sintético, incluyendo una intervención.
+Evaluar el efecto causal de la intervención en el tiempo.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Brodersen \cite{brodersen2015-causalTimeSeries}: Inferring causal impact using Bayesian structural time-series models
+\item Bishop \cite{bishop2006-PRML}: 13.3 Linear Dynamical Systems.
+\end{itemize}
+\end{description}
+
+\item \textbf{Aproximación de la inferencia por paseos al azar en el espacio de hipótesis}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] Conceptos básicos de los generadores de números pseudo-aleatorios. Ejemplos de generadores basados en sistemas caóticos. Mención al generador de números aleatorios \emph{Mersenne Twister}. Simulación de la distribución uniforme. Simulador de distribuciones arbitrarias basado en un simulador conocido como el uniforme u otro: \emph{rejection sampling} e \emph{importance sampling}.
+Ejemplos de aproximaciones de partículas Monte Carlo. \emph{Effective sample size} de los algoritmos Monte Carlo. Algoritmos de Monte Carlo basados en Cadenas de Markov para aproximar distribuciones de probabilidad. Ejemplos de \emph{Metropolis Hasting} y \emph{Gibbs Sampler}. Diagnósticos de convergencia.
+Presentación de Hamiltonian Monte Carlo e nociones de No-U-Turn Sampler.
+Presentación de un lenguaje de programación probabilístico.
+\item[Taller:] Completar implementaciones de rejection sampling e importance sampling.
+Completar implementación de Metropolis Hasting y Gibbs sampling.
+Varios ejercicios de implementación de modelos gráficos en el lenguaje de programación probabilística.
+Diagnósticos.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Bishop \cite{bishop2006-PRML}: 11.1 Basic Sampling Algorithms. - 11.2 Markov Chain Monte Carlo - 11.3 Gibbs Sampling.
+\item Stan user Guide \cite{stan-userGuide}: Ejemplos varios
+\item Martin \cite{martin2022-BMCP}: Ejemplos varios
+\end{itemize}
+\end{description}
+
+\item \textbf{Aproximadores de eventos raros por algoritmos de Monte Carlo}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] Simulación de ``eventos raros'': los problemas de aproximación de eventos que tienen probabilidades chicas.
+Las predicciones a priori sobre un conjuntos de datos como ejemplo de ``eventos raros'' y la imposibilidad de evaluar modelos alternativos a través de algoritmos MCMC genéricos.
+Presentación del algoritmo \emph{Sequential Monte Carlo} como simulador de eventos raros, y de modelos temporales de historias completa.
+La estrategia de re-muestreo (\emph{importance resampling}) y ejemplos de algoritmos \emph{residual}, \emph{stratified} y \emph{systematic}.
+Algoritmo de filtrado de partículas: \emph{bootstrap}, \emph{guided} y \emph{auxiliar}.
+Presentación del paquete \texttt{particles}
+\item[Taller:] Experimentos numéricos en un State-Space modelo Gaussaino lineal con solución analítica. Estimación de la evidencia parte 1.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Chopin \cite{chopin2020}: Cap 10. Particle Filtering: algoritmos y Python corner.
+\end{itemize}
+\end{description}
+
+% Parrafo
+
+\item \textbf{Evaluación de modelos mediante algoritmos de Monte Carlo}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:] Revisión de los experimentos numéricos.
+Predicción en modelos de historia completa.
+Consideraciones de algoritmos de aproximación de la propagación en modelos de historia completa.
+Los casos de \emph{Forward filtering backward sampling} para estimar trayectorias y \emph{two-filter} para estimar marginales. Sequential Quasi-Monte Carlo. La combinación de \emph{Sequential Monte Carlo} con los algoritmos clásicos MCMC, \emph{particle metropolis-hasting} y \emph{particle Gibbs sampler}.
+Simuladores SMC: \emph{Ibis}, \emph{tempering}, \emph{ABC}.
+Experimentos numéricos para estimar hipótesis al interior de los modelos y evaluar modelos alternativos.
+Estimación de la evidencia mediante SMC$^2$.
+\item[Taller:] Evaluación de modelos causales temporales alternativos. Evaluación de modelos en Monty Hall temporal.  Estimación de la evidencia parte 2.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Chopin \cite{chopin2020}: Cap 12. Particle Smoothing: algoritmos y Python corner.
+\end{itemize}
+\end{description}
+
+
+\item \textbf{Isomorfismo probabilidad-evolución y apuestas óptimas}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+Naturaleza multiplicativa de los procesos de selección probabilística y evolutiva.
+Sus consecuencias.
+Retomando la analogía con los procesos de apuestas.
+Los diagramas de influencia.
+Las emergencia de las variantes que reducen las fluctuaciones por diversificación individual (propiedad epistémica), cooperación (propiedad evolutiva), especialización (propiedad de especiación), y heterogeneidad (propiedad ecológica).
+La tendencia de a la agregación de las variantes en evolución (transiciones evolutivas mayores) y en probabilidad (teorías cuales).
+Apuestas óptimas individuales en contextos en los que se puede ahorrar, criterio Kelly.
+El criterio Kelly fraccional como seguro de vida en contextos de incertidumbre.
+Otros criterios prácticos basados en ahorros, diversificación, cooperación y especialización.
+\item[Taller:]
+1. Simulación del juego de apuestas binario.
+Evaluación numérica de las trayectorias de los recursos para las estrategias de diversificación, cooperación y especialización, ahorro.
+Evaluación del criterio Kelly fraccional y otras variantes.
+2. Estimación de habilidad en la historia del tenis profesional y evaluación de criterios de apuesta alternativos en base a los resultados obtenidos en una base de datos de pagos históricos ofrecidos por una casa de apuestas.
+\item[] \textbf{Bibliografía}
+\begin{itemize}
+\item Czegel \cite{czegel2022-bayesDarwin}: Bayes and Darwin: How replicator populations implement Bayesian computations.
+\item Peters \cite{peters2019-ergodicityEconomics}: The ergodicity problem in economics
+\item Kelly \cite{kelly1956-informationRate}: A New Interpretation of Information Rate.
+\item Kollet \cite{koller2009-PGM} 23. Structured Decision Problems
+\end{itemize}
+\end{description}
+
+\item \textbf{Hackatón ``apuestas de vida'': un problema de acción-percepción.}
+\vspace{-0.15cm}
+\begin{description}
+\item[Teórica:]
+Los ciclos de intercambio acción-percepción como extensión del esquema emisor-receptor de la teoría de la información.
+Ganancia de información.
+Presentación de un problema similar al Monty Hall extendido dinámico.
+Especificación de modelos causales alternativos.
+Presentación de una competencia de inferencia, intervención, apuestas e intercambios de recursos.
+\item[Taller:] Hackatón.
+\end{description}
+
+% Parra
+
+
+\item \textbf{Semana libre para prácticas, exámenes o compensación por feriados}
+\vspace{-0.15cm}
+\begin{description}
+\item[Disponible para ser usada como mejor corresponda]
+\end{description}
+
+\end{enumerate}
+
+
+
+\nocite{jaynes1984-bayesianBackground, mcelreath2020-rethinking, bishop2006-PRML, pearl2009-causality, cinelli2021-crashCourse, stan-userGuide, martin2022-BMCP, samaja1999-epistemologiaMetodologia }
+
+{\bibliographystyle{../../../aux/biblio/plos2015}
+\bibliography{../../../aux/biblio/biblio_notUrl.bib}
+}
+
+\end{document}
