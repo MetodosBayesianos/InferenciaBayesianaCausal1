@@ -1,0 +1,362 @@
+Electiva 2:
+Inferencia Causal
+Licenciatura en Ciencia de Datos UNSAM
+Gustavo Landfried1,2
+1. Departamento de Computación. Facultad de Ciencias Exactas y Naturales. Universidad de Buenos Aires.
+2. Bayes Plurinacional
+Correspondencia: glandfried@dc.uba.ar
+
+May 31, 2024
+
+1
+
+Resumen
+
+La ciencia es una institución que tiene pretensión de verdad, de alcanzar acuerdos intersubjetivos
+con validez universal. Las ciencias formales alcanzan estos acuerdos derivando teoremas en sistemas axiomáticos cerrados sin incertidumbre. En ciencias con datos, sin embargo, se deben validar
+las proposiciones en sistemas naturales abiertos con incertidumbre, lo que requiere el cumplimiento
+del principio de “no mentir”: no asegurar más de lo que se sabe (maximizando incertidumbre) sin
+ocultar lo que sı́ se sabe (dada la información disponible).
+Las reglas de la probabilidad se conocen desde finales del siglo 18 y se ha adoptado desde
+entonces como sistema de razonamiento en todas las ciencias empı́ricas (con datos). Ellas son
+conceptualmente intuitivas: preservar la creencia previa que sigue siendo compatible con los datos
+(regla del producto) y predecir con la contribución de todas las hipótesis (regla de la suma). A
+lo largo de los siglos las reglas de la probabilidad han sido derivadas repetidas veces a partir de
+diversos sistemas axiomáticos [1]. A pesar de que en todo este tiempo no se ha propuesto nada
+mejor en términos prácticos, el costo computacional asociados a la evaluación de todo el espacio
+de hipótesis ha limitado históricamente la aplicación estricta de las reglas de la probabilidad.
+En las vı́speras del siglo 21, el crecimiento en la capacidad de cómputo levantó finalmente el
+principal obstáculo que pesaba sobre la aplicabilidad de las reglas de la probabilidad. En esta
+época se desarrollan los métodos eficientes de aproximación por muestreo (basados en Cadenas
+de Markov) y de aproximación analı́tica (como expectation propogation, variational inference) [2].
+Por primera vez, desde el descubrimiento de la teorı́a de la probabilidad, comienza a ser posible
+en todos los campos de las ciencia resolver la inferencia de toda clase de problemas aproximando
+la aplicación estricta de las reglas de la probabilidad, evaluando el espacio completo de hipótesis.
+Los argumentos causales son el principal tipo de proposición tanto para las ciencias con datos
+como para las actividades técnicas que buscan intervenir el comportamiento de ciertos sistemas
+naturales. Los modelos causales probabilı́sticos son hipótesis como cualquier otra y, por lo tanto, se
+evalúan en función de su capacidad predictiva, lo que hace que naturalmente prefiramos los modelos
+que generen menor sorpresa (única fuente de información). Sin embargo, la mera predicción de los
+datos observados no es suficiente para descubrir las estructuras causales subyacentes debido a que
+diferentes estructuras causales pueden generar las mismas predicciones. Esta dificultad no implica
+que las reglas de la probabilidad no sean la forma correcta de evaluar los modelos. Al contrario.
+La caracterı́stica principal de los argumentos causales es su capacidad de adaptarse a diferentes
+contextos, como las intervenciones humanas o naturales, que cambian su estructura causal y por
+1
+
+lo tanto sus predicciones. Las hipótesis causales son en realidad “teorı́as causales”, sistemas
+de modelos (o estructuras) causales que se prenden y apagan en función del contexto [3]. Es
+justamente esta capacidad de adaptación a los diversos contextos lo que hace que las teorı́as
+causales reales, que coinciden con la realidad causal subyacentes, tengan mejor capacidad predictiva
+en la totalidad de los contextos que el resto de teorı́as causales alternativas.
+
+2
+
+Objetivos
+Esta materia etá enfocada en la evaluación de argumentos causales alternativos mediante
+(aproximaciones a) el sistema de razonamiento de las ciencias con datos: la aplicación estricta
+de las reglas de la probabilidad.
+
+La Electiva 2 “Inferencia Causal” tiene por principal objetivo revisar los métodos desarrollados
+en las últimas décadas para: especificar matemáticamente los argumentos causales expresados en
+lenguaje natural mediante métodos gráficos intuitivos; precisar cómo la estructura causal influye
+en el flujo de inferencia entre las variables del modelo; identificar el efecto causal entre variables de
+un modelo causal en base a datos observacionales; y diseñar experimentos que permitan evaluar
+modelos causales alternativos; y tomar decisiones óptimas en contextos de incertidumbre.
+
+3
+
+Contenidos mı́nimos
+1. Modelos gráficos y evaluación de modelo causal en contextos constantes
+Teórica: La validación de proposiciones en ciencias con datos según el principio de “no
+mentir”: máxima incertidumbre dada la información disponible. Interpretación de las
+reglas de la probabilidad como la preservación de la creencia previa que sigue siendo
+compatible con el dato (regla del producto) y predicción con la contribución de todas
+las hipótesis (regla de la suma). Especificación gráfica de modelos causales basada en
+la notación de redes bayesianas. Simulación de muestras a partir de modelos gráficos
+causales. Evaluación de modelos causales alternativos bajo contextos (o estructuras
+causales subyacentes) constantes. Casos identificables, y casos no identificables.
+Taller: Generación de base de datos sintéticas a partir de la especificación gráfica de modelos
+causales. Evaluación de modelos causales alternativos: un caso en los que se puede
+identificar el modelo subyacente (Monty Hall vs alternativa); y un caso en los que no
+se pueden identificar el modelo subyacente (A→B vs B→A).
+Bibliografı́a
+• Samaja [4]: 3.1 Descripción y explicación. - 3.2 Un ejemplo de descripción cientı́fica:
+la historia clı́nica. - 3.3 Estructura lógica del discurso descriptivo. - 3.4 Necesidad
+de una función de transducción entre la descripción y la tautologı́a.
+• Klimovsky [5]: Cap 4 Los enunciados cientı́ficos.
+• Bishop [6]: 1. Introduction - 2. Model-based machine learning - 3. Bayesian
+inference - 4. Probabilistic graphical models
+2. Aplicación estricta de las reglas de la probabilidad
+Teórica: Distribuciones conjugadas: Beta - Binomial, Categórica - Dirichlet, Gaussiana Gaussiana univariada. Ejemplos: modelos de recomendación me-gusta/no-me-gusta,
+modelo Monty Hall extendido con estimación del sesgos de quien esconde el regalo,
+y modelo de habilidad con desempeño observable. Estimaciones en-lı́nea (filtrado) de
+dinámicas temporales usando el último posterior como prior del siguiente evento. Explicación de los modelos lineales y su especificación gráfica. Presentación del posterior y
+evidencia analı́tica en modelos gaussianos multivariados. Pseudo código de la regresión
+lineal basada en la aplicación estricta de las reglas de la probabilidad.
+2
+
+Taller: Completar las implementación de modelo de recomendación Beta-Binomial, del
+modelo Monty Hall Categórica-Dirichlet, y del modelo habilidad-desempeño GaussianaGaussiana provisto por la cátedra. Estimación temporal en-lı́nea mediante el uso del
+último posterior como prior del siguiente evento. Visualización de las estimaciones.
+Completar la implementación de regresión lineal bayesiana provista por la cátedra.
+Bibliografı́a
+• Bishop [2] Cap 2.1 Binary Variables - 2.2 Multinomial Variables - 2.3 The Gaussian
+Distribution
+3. Emergencia del sobreajuste por selección y el balance natural por evaluación.
+Teórica: El problema computacional de las reglas de la probabilidad. Aproximación de
+la inferencia exacta mediante métodos de estimación puntal basados en funciones de
+costo ad-hoc (máxima verosimilitud, máximo a posteriori y validación cruzada). Regresión lineal ajustada por mı́nimos cuadrados como ejemplo de máxima verosimilitud.
+Evaluación de modelos lineales alternativos y la emergencia del sobreajuste. Regresión
+lineal ajustada por regularizador L2 como ejemplo de máximo a posteriori y el efecto
+de la penalización L2 sobre la complejidad de los modelos. El sobreajuste remanente de
+la evaluación de modelos mediante validación cruzada. El balance natural mediante la
+evaluación completa del espacio de hipótesis (o modelos) mediante la aplicación estricta
+de las reglas de la probabilidad. La predicción mediante ensambles de modelos y los
+lı́mites de representatividad de los ensambles finitos de modelos lineales. Presentación
+de Procesos Gaussianos.
+Taller: Completar la evaluación de modelos lineales alternativos mediante basada en la
+propia implementación de regresión lineal bayesiana. Visualizar el efecto que produce
+el prior sobre la evaluación de modelos. ¿Los priors informativos penalizan los modelos
+más complejos, como señalan quienes usan los regularizadores L2?. Implementación
+de la predicción marginal del dato, integrando todos los modelos lineales (ensamble).
+Completar la implementación de procesos gaussianos y visualizar la predicción con
+diferentes parámetros.
+Bibliografı́a
+• Bishop [2]: 1.1 Polynomial Curve Fitting - 1.2 Probability Theory - 1.3 Model
+Selection - 3.3 Bayesian Linear Regresion - 3.4 Bayesian Model Comparision - 6.4.1
+Linear regression revisited - 6.4.2 Gaussian processes for regression
+4. Sorpresa: el problema de la comunicación con la realidad.
+Teórica: El problema de la comunicación con la realidad. Definición de Base Empı́rica.
+El dato cientı́fico como construcción relativa a supuestos. Los elementos del esquema
+emisor-receptor de Shannon y la estructura invariante del dato cientı́fico. La naturaleza
+multiplicativa de la función de costo de la teorı́a de la probabilidad. La analogı́a con
+la tasa de crecimiento (ergódica) de los recursos en procesos de apuestas y la emergencia de la propiedad epistémica: la apuesta óptima no depende de cuánto ofrezca la
+casa de apuestas. Evaluación de sistemas de comunicación alternativos en base a su
+tasa de sorpresa, el caso de Monty Hall y su alternativa. Interpretación de entropı́a
+y entropı́a cruzada, ejemplos. Re-definición de “no mentir” como máxima entropı́a
+dadas las restricciones. Distribuciones de probabilidad exponencial como ejemplos de
+máxima entropı́a dada la información disponible. Aproximación de distribuciones de
+probabilidad por minimización de divergencia KL (expectation propagation) y KL inversa (variational inference): el ejemplo de la mixtura de guassianas.
+Taller: a. Simulación numérica de un problema de apuestas en el que una casa de apuestas
+paga 3 por cara y 1.2 por sello. Cómputo de la esperanza de los recursos. Diferencia
+respecto con las trayectoria de los recursos individuales en el tiempo. Optimización temporal de apuesta, numérica o analı́tica. b. Optimización numérica de la minimización
+3
+
+de la divergencia KL y KL inversa entre una mixtura de gaussianas y una Gaussiana
+univariada.
+Bibliografı́a
+• Klimovsky [5]: Cap 2. La base empı́rica de la ciencia.
+• Samaja [4]: 3.5 Presentación del Concepto “Matriz de Datos” - 3.6.2 Algunos
+postulados para desarrollar la teorı́a clásica. - 3.6.3. Sobre el carácter general de
+las matrices de datos. - 3.6.4. Sistema de matrices. - 3.6.S. Sobre el puesto de los
+indicadores en la matriz de datos
+• MacKay [7]: 1.1 How can we achieve perfect communication over an imperfect,
+noisy communication channel? 2.4 Definition of entropy and related functions - 2.5
+Decomposability of the entropy - 2.6 Gibbs’ inequality - 4.1 How to measure the
+information content of a random variable?
+• Kelly [8]: A New Interpretation of Information Rate.
+5. Especificación de modelo por Factor Graph e inferencia por pasaje de mensajes
+Teórica: Método gráficos de especificación matemática de modelos causales probabilı́sticos
+mediante gráfos bipartitos entre variables y funciones, factor graph. Algoritmo de inferencia óptimo (en complejidad computacional) basado en el pasaje descentralizado
+de mensajes entre los nodos del grafo, sum-product algorithm. Ejemplos: el estimador
+ELO y el estimador de habilidad estado-del-arte en la industria del video juego. La
+aproximación analı́tica por expectation propagation. Flujo de inferencia (independencia
+condicional) en las estructuras causales elementales: pipe, fork, colider. Inferencia en
+el modelo alarma-terremoto (u otro que contenga las estructuras elementales) mediante una librerı́a de Python desarrollada para resolver inferencia en modelos gráficos.
+Criterio d-separation.
+Taller: 1. Dado una librerı́a de python provista por la cátedra, que contiene en la clase
+Gaussiana los mensajes involucrados en el modelo de habilidad (operaciones +, -, *,
+/ y aprox), completar la estructura sin terminar de la clase Competencia, en la que
+se actualizan los posteriors sobre las habilidades de las personas luego de observar un
+resultado ganar/perder de una competencias con 2 equipos de tamaño N. 2. Dado una
+librerı́a de python provista por la cátedra, que contiene la clase Modelo implementada
+como una red bipartita entre las clases NodoVariable y NodoFuncion, completar el
+algoritmo sin terminar suma-producto.
+Bibliografı́a
+• Bishop [2] 8.2 Conditional Independence - 8.2.1 Three example graphs - 8.2.2 Dseparation - 8.4 Inference in Graphical Models - 8.4.1 Inference on a chain - 8.4.2
+Trees - 8.4.3 Factor graphs - 8.4.4 The sum-product algorithm - 8.4.7 Loopy belief
+propagation
+• Neal [9]: 3. The Flow of Association and Causation in Graphs
+6. Teorı́as causales.
+Teórica: Revisión del problema de evaluación de los modelos A → B y B → A en contextos (o estructuras causales subyacentes) constantes. Introducción a los contextos (o
+estructuras causales subyacentes) dinámicas. El caso de las intervenciones humanas. La
+equivalencia entre las definiciones de potential outcome y do-operator. Su especificación
+matemática a través de la notación de compuertas (gates) en factor graph. Definición de
+teorı́as causales basada en los sistemas de modelos causales integrados mediante gates.
+Re-especificación de los modelo A → B y B → A como teorı́as causales. La simulación
+de datos a partir de teorı́as causales. Identificación de teorı́as causales alternativas bajo
+contextos dinámicos.
+
+4
+
+Taller: Generación de datos sintéticos a partir de la especificación gráfica de una teorı́a
+causal. Evaluación de teorı́as causales alternativas, A → B y B → A. Continúan con
+los ejercicios sin terminar de las clases anteriores.
+Bibliografı́a
+• Neal [9]: 2.1 Potential Outcomes and Individual Treatment Effects. - 4.1 The
+do-operator and Interventional Distributions.
+• Winn [3]: Causality with gates.
+7. Niveles de razonamiento causal y estimación de efecto causal
+Teórica: La solución a la paradoja de Yule-Simpson: la necesidad de conocer la realidad
+causal subyacente para estimar el efecto causal. Los niveles de razonamiento causal
+(asociacional, intervencional, y contrafactual) como emergentes naturales del proceso
+generativo de las teorı́as causales. El ejemplo de la teorı́a causal Monty Hall. Flujo
+de inferencia en teorı́as causales y revisión de d-separation. Backdoor criterion para
+identificar el efecto causal de una intervención usando únicamente la información de
+observaciones y el modelo causal subyacente. Ejemplo de estructuras causales y clasificación de variables como buenos, neutrales o malos para la identificación del efecto
+causal mediante backdoor criterion. Estimación del efecto causal en modelos lineales
+usando nuestra implementación de la regresión lineal bayesiana.
+Taller: Realizar inferencia del efecto causal para distintos pares de modelos causales lineales
+y conjunto de datos sintéticos mediante el uso de la regresión lineal bayesianas y la
+aplicación del criterio backdoor. Habrá ejemplos con buenos, neutros y malos controles.
+Bibliografı́a
+• Neal [9]: 4. Causal Models
+• Cinelli [10]: A crash course in good and bad controls
+8. Semana libre para prácticas, exámenes o compensación por feriados
+Disponible para ser usada como mejor corresponda
+9. Series temporales e inferencia en modelos de historia completa
+Teórica: Hiden Los problemas de propagar la información en una sola dirección, del pasado
+al futuro, mediante el uso del último posterior como prior del siguiente evento (enfoque
+de filtering). Modelos de historia completa. El ejemplo del estimador de habilidad
+estado del arte en la industria del video juego. Algoritmo loopy belief propagation para la
+propagación forward - backward de la información por todo el sistema o historia causal
+(enfoque de smoothing). Discusión de un pseudo código para la implementación del
+algoritmo de inferencia iterativo en el modelo de estimación de habilidad. Diferencias
+entre las estimaciones filtering y smoothing en el caso de dos jugadores y dos partidas.
+Discusión de un pseudo código para la inferencia en el Monty Hall temporal con sesgo.
+Taller: 1. Completar una implementación parcial provista por la cátedra del algoritmo de
+inferencia forward - backward en el modelo de estimación de habilidad. 2. Estudio de la
+base de datos de la historia del tenis femenino y masculino WTA y ATP, y visualización
+de curvas de aprendizaje. 3. Completar una implementación parcial provista por la
+cátedra del algoritmo de estimación del sesgo de quien esconde en el modelo Monty
+Hall temporal.
+Bibliografı́a
+• Dangauthier [11]: Trueskill through time: Revisiting the history of chess.
+• Bishop [2]: 13.2.2 The forward-backward algorithm. - 13.2.3 The sum-product
+algorithm for the HMM. - 13.2.4 Scaling factors
+10. Inferencia causal en series temporales
+5
+
+Teórica: Series de tiempo lineales jerárquicas. Incorporación de tendencias locales y tendencias locales estacionarias, de periodicidades (como las estaciones del año) y de coeficientes dinámicos. Presentación de teorı́as alternativas sobre el aprendizaje que incluyen
+componentes biológicos individuales, económicos familiares y polı́ticos nacionales. Evaluación de historias teóricas causales alternativas en contextos dinámicos. Intervenciones
+en series temporales. Evaluación del efecto causal en series temporales, contrafactuales.
+Taller: Completar la implementación, provista por la cátedra, de dos teorı́as alternativas
+de aprendizaje. Crear un conjunto de datos sintético a partir de una de ellas. Evaluar
+la capacidad predictiva de las teorı́as causales alternativas sobre el conjunto de datos
+sintético. Modificar el conjunto de datos sintético, incluyendo una intervención. Evaluar
+el efecto causal de la intervención en el tiempo.
+Bibliografı́a
+• Brodersen [12]: Inferring causal impact using Bayesian structural time-series models
+• Bishop [2]: 13.3 Linear Dynamical Systems.
+11. Aproximación de la inferencia por paseos al azar en el espacio de hipótesis
+Teórica: Conceptos básicos de los generadores de números pseudo-aleatorios. Ejemplos de
+generadores basados en sistemas caóticos. Mención al generador de números aleatorios
+Mersenne Twister. Simulación de la distribución uniforme. Simulador de distribuciones
+arbitrarias basado en un simulador conocido como el uniforme u otro: rejection sampling e importance sampling. Ejemplos de aproximaciones de partı́culas Monte Carlo.
+Effective sample size de los algoritmos Monte Carlo. Algoritmos de Monte Carlo basados en Cadenas de Markov para aproximar distribuciones de probabilidad. Ejemplos
+de Metropolis Hasting y Gibbs Sampler. Diagnósticos de convergencia. Presentación
+de Hamiltonian Monte Carlo e nociones de No-U-Turn Sampler. Presentación de un
+lenguaje de programación probabilı́stico.
+Taller: Completar implementaciones de rejection sampling e importance sampling. Completar implementación de Metropolis Hasting y Gibbs sampling. Varios ejercicios de
+implementación de modelos gráficos en el lenguaje de programación probabilı́stica. Diagnósticos.
+Bibliografı́a
+• Bishop [2]: 11.1 Basic Sampling Algorithms. - 11.2 Markov Chain Monte Carlo 11.3 Gibbs Sampling.
+• Stan user Guide [13]: Ejemplos varios
+• Martin [14]: Ejemplos varios
+12. Aproximadores de eventos raros por algoritmos de Monte Carlo
+Teórica: Simulación de “eventos raros”: los problemas de aproximación de eventos que
+tienen probabilidades chicas. Las predicciones a priori sobre un conjuntos de datos
+como ejemplo de “eventos raros” y la imposibilidad de evaluar modelos alternativos a
+través de algoritmos MCMC genéricos. Presentación del algoritmo Sequential Monte
+Carlo como simulador de eventos raros, y de modelos temporales de historias completa.
+La estrategia de re-muestreo (importance resampling) y ejemplos de algoritmos residual,
+stratified y systematic. Algoritmo de filtrado de partı́culas: bootstrap, guided y auxiliar.
+Presentación del paquete particles
+Taller: Experimentos numéricos en un State-Space modelo Gaussaino lineal con solución
+analı́tica. Estimación de la evidencia parte 1.
+Bibliografı́a
+• Chopin [15]: Cap 10. Particle Filtering: algoritmos y Python corner.
+
+6
+
+13. Evaluación de modelos mediante algoritmos de Monte Carlo
+Teórica: Revisión de los experimentos numéricos. Predicción en modelos de historia completa. Consideraciones de algoritmos de aproximación de la propagación en modelos
+de historia completa. Los casos de Forward filtering backward sampling para estimar
+trayectorias y two-filter para estimar marginales. Sequential Quasi-Monte Carlo. La
+combinación de Sequential Monte Carlo con los algoritmos clásicos MCMC, particle
+metropolis-hasting y particle Gibbs sampler. Simuladores SMC: Ibis, tempering, ABC.
+Experimentos numéricos para estimar hipótesis al interior de los modelos y evaluar
+modelos alternativos. Estimación de la evidencia mediante SMC2 .
+Taller: Evaluación de modelos causales temporales alternativos. Evaluación de modelos en
+Monty Hall temporal. Estimación de la evidencia parte 2.
+Bibliografı́a
+• Chopin [15]: Cap 12. Particle Smoothing: algoritmos y Python corner.
+14. Isomorfismo probabilidad-evolución y apuestas óptimas
+Teórica: Naturaleza multiplicativa de los procesos de selección probabilı́stica y evolutiva.
+Sus consecuencias. Retomando la analogı́a con los procesos de apuestas. Los diagramas de influencia. Las emergencia de las variantes que reducen las fluctuaciones por
+diversificación individual (propiedad epistémica), cooperación (propiedad evolutiva),
+especialización (propiedad de especiación), y heterogeneidad (propiedad ecológica). La
+tendencia de a la agregación de las variantes en evolución (transiciones evolutivas mayores) y en probabilidad (teorı́as cuales). Apuestas óptimas individuales en contextos
+en los que se puede ahorrar, criterio Kelly. El criterio Kelly fraccional como seguro
+de vida en contextos de incertidumbre. Otros criterios prácticos basados en ahorros,
+diversificación, cooperación y especialización.
+Taller: 1. Simulación del juego de apuestas binario. Evaluación numérica de las trayectorias de los recursos para las estrategias de diversificación, cooperación y especialización,
+ahorro. Evaluación del criterio Kelly fraccional y otras variantes. 2. Estimación de
+habilidad en la historia del tenis profesional y evaluación de criterios de apuesta alternativos en base a los resultados obtenidos en una base de datos de pagos históricos
+ofrecidos por una casa de apuestas.
+Bibliografı́a
+• Czegel [16]: Bayes and Darwin: How replicator populations implement Bayesian
+computations.
+• Peters [17]: The ergodicity problem in economics
+• Kelly [8]: A New Interpretation of Information Rate.
+• Kollet [18] 23. Structured Decision Problems
+15. Hackatón “apuestas de vida”: un problema de acción-percepción.
+Teórica: Los ciclos de intercambio acción-percepción como extensión del esquema emisorreceptor de la teorı́a de la información. Ganancia de información. Presentación de un
+problema similar al Monty Hall extendido dinámico. Especificación de modelos causales
+alternativos. Presentación de una competencia de inferencia, intervención, apuestas e
+intercambios de recursos.
+Taller: Hackatón.
+16. Semana libre para prácticas, exámenes o compensación por feriados
+Disponible para ser usada como mejor corresponda
+
+7
+
+References
+[1] Halpern JY. Reasoning about uncertainty. 2nd ed. MIT press; 2017.
+[2] Bishop CM. Pattern recognition and machine learning. springer; 2006.
+[3] Winn J. Causality with gates. In: Artificial Intelligence and Statistics. PMLR; 2012. p.
+1314–1322.
+[4] Samaja J. Epistemologı́a y metodologı́a: elementos para una teorı́a de la investigación
+cientı́fica. EUDEBA; 1999.
+[5] Klimovsky G. Las desventuras del conocimiento cientı́fico; 1994.
+[6] Bishop CM. Model-based machine learning. Philosophical Transactions of the Royal Society
+A: Mathematical, Physical and Engineering Sciences. 2013;371(1984):20120222.
+[7] MacKay DJ. Information theory, inference and learning algorithms. Cambridge university
+press; 2003.
+[8] Kelly jr JL. A New Interpretation of Information Rate. Bell System Technical Journal. 1956;.
+[9] Neal B. Introduction to causal inference. Course Lecture Notes (draft). 2020;.
+[10] Cinelli C, Forney A, Pearl J. A crash course in good and bad controls. Sociological Methods
+& Research. 2022; p. 00491241221099552.
+[11] Dangauthier P, Herbrich R, Minka T, Graepel T. Trueskill through time: Revisiting the
+history of chess. In: Advances in Neural Information Processing Systems; 2008. p. 337–344.
+[12] Brodersen KH, Gallusser F, Koehler J, Remy N, Scott SL. Inferring causal impact using
+Bayesian structural time-series models. The Annals of Applied Statistics. 2015;.
+[13] Team SD. Stan User’s Guide;.
+[14] Martin OA, Kumar R, Lao J. Bayesian Modeling and Computation in Python. CRC Press;
+2022.
+[15] Chopin N, Papaspiliopoulos O, et al. An introduction to sequential Monte Carlo. vol. 4.
+Springer; 2020.
+[16] Czégel D, Giaffar H, Tenenbaum JB, Szathmáry E. Bayes and Darwin: How replicator
+populations implement Bayesian computations. BioEssays. 2022; p. 2100255.
+[17] Peters O. The ergodicity problem in economics. Nature Physics. 2019;15(12):1216–1221.
+[18] Koller D, Friedman N. Probabilistic graphical models: principles and techniques. MIT press;
+2009.
+[19] Jaynes ET. Bayesian methods: General background; 1984.
+[20] McElreath R. Statistical rethinking: A Bayesian course with examples in R and Stan. CRC
+press; 2020.
+[21] Pearl J. Causality. Cambridge university press; 2009.
+
+8
+
+
