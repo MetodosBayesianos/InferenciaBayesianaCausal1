@@ -45,9 +45,13 @@ En particular, el cátodo (electródo negativo) produce
 
 $$2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} $$
 
-Y el ánodo produce,
+Y el ánodo (electródo positivo) produce,
 
-$$ 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$$
+$$4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$$.
+
+Y luego cuando se produce la combustión de hidrógeno y producción de energía (calor o luz).
+
+$$ 2\cdot H_2​ + O_2​ \ 2H2​O(g) + \text{energía}$$
 
 
 Aquí, el agua recibe electrones y produce hidrógeno y iones hidroxilo (OH⁻).
