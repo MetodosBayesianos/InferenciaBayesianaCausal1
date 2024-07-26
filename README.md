@@ -36,18 +36,13 @@ Desde el surgimiento de la primera forma de la materia capaz de reproducirse has
 El problema real de todo organismo vivo es <em>controlar el ciclo acción-percepción</em> del cual depende para sobrevivir y reproducirse.
 Ante todo, los organismos vivos deben <em>transmitir el conocimiento previo</em> a la siguiente generación.
 No parece haber otro medio para transmitir información que no sea transformando la materia, especialmente reproduciendo una versión de la propia forma de la materia.
-Las moléculas nacen y mueren durante procesos químicos como los que ocurren durante la combustión.
-Por ejemplo, la electólisis del agua
+Las moléculas nacen y mueren durante procesos químicos como los que ocurren durante la combustión, como por ejemplo la electrólisis del agua
 
-$$\underbrace{2 \cdot H_2O}_{\text{Agua liquida}} \underbrace{\rightarrow}_{\text{Electrolisis}} H_2 + O_2$$
+$$2 \cdot H_2O \underbrace{\rightarrow}_{\text{electrólisis}} H_2 + O_2$$
 
-
-
-    Entrada: Agua líquida (H₂O).
-    Salida: Hidrógeno gaseoso (H₂) y oxígeno gaseoso (O₂).
+que transforma agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$).
 
 
- cuando el
 
 Los virus (o fragmentos de ARN) son una de las formas de la materia más simples con capacidades indiscutibles para sobrevivir, reproducirse y diversificarse persistentemente en el tiempo.
 Que requiera de otras formas de vida para implementar ese proceso, no la menos capaz que otras formas de vida.
