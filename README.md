@@ -21,7 +21,7 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
 <table>
   <tr>
     <td width="50%" align="center"><img src="auxiliar/static/fcen.png" width="250"/></td>
-    <td width="50%" align="center"><img src="auxiliar/static/UBA2.png" width="250"/></td>
+    <td width="50%" align="center"><img src="auxiliar/static/UBA2_blanco.jpg" width="250"/></td>
   </tr>
   <tr>
     <td width="50%" align="center"><b>Pabellón 0 + Inf - FacultadCEN</b></td>
