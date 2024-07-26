@@ -39,7 +39,10 @@ No parece haber otro medio para transmitir información que no sea transformando
 Las moléculas nacen y mueren durante procesos químicos como los que ocurren durante la combustión.
 Por ejemplo, la electólisis del agua
 
-$$\underbrace{2 \cdot H_{2}O}_{\text{líquido}} \underbrace{\rightarrow}^{\text{Electrolisis}} 2\cdot \underbrace{H_2 + O_2​ }_{\text{Gaseoso}}$$
+$$2 \cdot H_2O$$
+
+
+<!--$$\underbrace{2 \cdot H_{2}O}_{\text{líquido}} \underbrace{\rightarrow}^{\text{Electrolisis}} 2\cdot \underbrace{H_2 + O_2​ }_{\text{Gaseoso}}$$-->
 
     Entrada: Agua líquida (H₂O).
     Salida: Hidrógeno gaseoso (H₂) y oxígeno gaseoso (O₂).
