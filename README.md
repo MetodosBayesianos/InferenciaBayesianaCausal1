@@ -16,6 +16,7 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
     <td width="50%" align="center"><b>Universidad Nacional de San Martín - Argentina</b></td>
   </tr>
 </table>
+
   <br>
 
 <table>
@@ -29,18 +30,52 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
   </tr>
 </table>
 
-<!--
-Campus Migueletes - EscuelaCyT| Universidad Nacional de San Martín - Argentina.
-:-------------------------:|:-------------------------:
-![EscuelaCyT](auxiliar/static/ecyt.jpeg)  |  ![UNSAM](auxiliar/static/UNSAM.png)
+### Marco Conceptual: ¿Qué te hace bien?
+
+Desde el surgimiento de la primera forma de la materia capaz de reproducirse hasta el presente, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
+El problema real de todo organismo vivo es <em>controlar el ciclo acción-percepción</em> del cual depende para sobrevivir y reproducirse.
+Ante todo, los organismos vivos deben <em>transmitir el conocimiento previo</em> a la siguiente generación.
+No parece haber otro medio para transmitir información que no sea transformando la materia, especialmente reproduciendo una versión de la propia forma de la materia.
+Las moléculas nacen y mueren durante procesos químicos como los que ocurren durante la combustión.
+Por ejemplo, la electólisis del agua
+
+$$\underbrace{2 \cdot H_{2}O}_{\text{líquido}} \underbrace{\rightarrow}^{\text{Electrolisis}} 2\cdot \underbrace{H_2 + O_2​ }_{\text{Gaseoso}}$$
+
+    Entrada: Agua líquida (H₂O).
+    Salida: Hidrógeno gaseoso (H₂) y oxígeno gaseoso (O₂).
 
 
-Pabellón 0 + Inf - FacultadCEN | Universidad Nacional de Buenos Aires - Argentina.
-:-------------------------:|:-------------------------:
-![EscuelaCyT](auxiliar/static/fcen.png)  |  ![UNSAM](auxiliar/static/UBA2.png)-->
+ cuando el
+
+Los virus (o fragmentos de ARN) son una de las formas de la materia más simples con capacidades indiscutibles para sobrevivir, reproducirse y diversificarse persistentemente en el tiempo.
+Que requiera de otras formas de vida para implementar ese proceso, no la menos capaz que otras formas de vida.
 
 
-y del Instituo de Cálculo de la licenciatura de computación del Deprat
+
+La biomasa en la tierra es, en este sentido, la única herencia de conocimientos causales conocida en el entorno del planeta tierra con probadas capacidades para sobrevivir, para reproducirse o expandirse, y para modificarse o explorar nuevos espacios alternativos de formas de la materia.
+Actualmente, las formas de vida más "simples" (virus, protozoa, archaea y bacterias) representan el 16\% de la biomasa en la tierra, las formas de vida compleja que se alimentan del sol, agua y otro componentes químicos (las plantas) representan el 82\%, y las formas de vida que necesitan alimentarse de otros seres (hongos y animales) representan el 2\%.
+
+<br>
+
+
+
+
+
+A diferencia de otros animales, el linaje humano comenzó a heredar conocimientos prácticos no solo en forma de información genética, sino también en forma de información cultural (tradiciones cognitivas o comportamentales).
+Antes de la transición cultural estuvimos en grave peligro de extinción, como se evidencia en la baja diversidad del genoma humano respecto de nuestros homínidos más cercanos\cite{Hrdy2009}.
+Luego de la transición cultural ocupamos todos los nichos ecológicos de la tierra como ningún otro vertebrado terrestre lo había logrado antes~\cite{Boyd2011}.
+A pesar de este relativo éxito evolutivo, la biomasa humana representa tan solo el $0.01$\% de la biomasa total (o $2.5$\% de la biomasa animal) y las proyecciones indican que estamos a menos de un siglo del estancamiento.
+
+
+
+
+
+
+Desde el surgimiento de la primera forma de vida capaz de auto-reproducirse, hace 4 mil millones de años, hasta la actualidad, la vida adquirió una enorme complejidad en términos de diversificación, cooperación, especialización y heterogeneidad. El
+
+
+
+
 
 ## Objetivos.
 
