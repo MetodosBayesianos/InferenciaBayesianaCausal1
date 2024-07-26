@@ -51,7 +51,7 @@ $$4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$$.
 
 Y luego cuando se produce la combustión de hidrógeno y producción de energía (calor o luz).
 
-$$ 2\cdot H_2​ + O_2​ \ 2H2​O(g) + \text{energía}$$
+$$ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$$
 
 
 Aquí, el agua recibe electrones y produce hidrógeno y iones hidroxilo (OH⁻).
