@@ -53,20 +53,10 @@ Y luego cuando se produce la combustión de hidrógeno y producción de energía
 
 $$ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$$
 
-
-Aquí, el agua recibe electrones y produce hidrógeno y iones hidroxilo (OH⁻).
-Ánodo (Electrodo Positivo):
-4OH−→O2+2H2O+4e−4OH−→O2​+2H2​O+4e−
-Aquí, los iones hidroxilo se descomponen para producir oxígeno, agua y
+En este proceso no decimos que el agua tenga vida a pesar de que se nazca (se genere) en un caso y muere (se degenere) en el otro caso pues el proceso no reproduce la forma de la materia, sino que la transforma.
+Existe menos controversia respecto de que los virus, fragmentos de ARN, son formas vida pues es indiscutible su capacidad de reproducirse y diversificarse en el tiempo, adaptándonse a los cambios ambientales, como es el sistema inmune del ser humano.
 
 
-Luego
-
-
-
-
-Los virus (o fragmentos de ARN) son una de las formas de la materia más simples con capacidades indiscutibles para sobrevivir, reproducirse y diversificarse persistentemente en el tiempo.
-Que requiera de otras formas de vida para implementar ese proceso, no la menos capaz que otras formas de vida.
 
 
 
