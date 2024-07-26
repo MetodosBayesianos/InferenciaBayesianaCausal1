@@ -4,6 +4,32 @@
 
 La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte como materia optativa de forma paralela en las licenciaturas de ciencias de datos de la Escuela de Ciencia y Tecnoliogía de la UNSAM y en las licenciatura de ciencia de datos, ciencias de la computación y posgrado de Facultad de Ciencias Exactas y Naturales, UBA.
 
+<br>
+
+<table>
+  <tr>
+    <td width="50%" align="center"><img src="auxiliar/static/ecyt.jpeg" width="250"/></td>
+    <td width="50%" align="center"><img src="auxiliar/static/UNSAM.png" width="250"/></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><b>Campus Migueletes - EscuelaCyT</b></td>
+    <td width="50%" align="center"><b>Universidad Nacional de San Martín - Argentina</b></td>
+  </tr>
+</table>
+  <br>
+
+<table>
+  <tr>
+    <td width="50%" align="center"><img src="auxiliar/static/fcen.png" width="250"/></td>
+    <td width="50%" align="center"><img src="auxiliar/static/UBA2.png" width="250"/></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><b>Pabellón 0 + Inf - FacultadCEN</b></td>
+    <td width="50%" align="center"><b>Universidad Nacional de Buenos Aires - Argentina</b></td>
+  </tr>
+</table>
+
+<!--
 Campus Migueletes - EscuelaCyT| Universidad Nacional de San Martín - Argentina.
 :-------------------------:|:-------------------------:
 ![EscuelaCyT](auxiliar/static/ecyt.jpeg)  |  ![UNSAM](auxiliar/static/UNSAM.png)
@@ -11,7 +37,7 @@ Campus Migueletes - EscuelaCyT| Universidad Nacional de San Martín - Argentina.
 
 Pabellón 0 + Inf - FacultadCEN | Universidad Nacional de Buenos Aires - Argentina.
 :-------------------------:|:-------------------------:
-![EscuelaCyT](auxiliar/static/fcen.png)  |  ![UNSAM](auxiliar/static/UBA2.png)
+![EscuelaCyT](auxiliar/static/fcen.png)  |  ![UNSAM](auxiliar/static/UBA2.png)-->
 
 
 y del Instituo de Cálculo de la licenciatura de computación del Deprat
