@@ -9,7 +9,7 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
 <table>
   <tr>
     <td width="50%" align="center"><img src="auxiliar/static/ecyt.jpeg" width="250"/></td>
-    <td width="50%" align="center"><img src="auxiliar/static/UNSAM.png" width="250"/></td>
+    <td width="50%" align="center"><img src="auxiliar/static/UNSAM_blanco.png" width="250"/></td>
   </tr>
   <tr>
     <td width="50%" align="center"><b>Campus Migueletes - EscuelaCyT</b></td>
