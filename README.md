@@ -4,9 +4,14 @@
 
 La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte como materia optativa de forma paralela en las licenciaturas de ciencias de datos de la Escuela de Ciencia y Tecnoliogía de la UNSAM y en las licenciatura de ciencia de datos, ciencias de la computación y posgrado de Facultad de Ciencias Exactas y Naturales, UBA.
 
-a | b
+Campus Migueletes - EscuelaCyT| Universidad Nacional de San Martín - Argentina.
 :-------------------------:|:-------------------------:
 ![EscuelaCyT](auxiliar/static/ecyt.jpeg)  |  ![UNSAM](auxiliar/static/UNSAM.png)
+
+
+Pabellón 0 + Inf - FacultadCEN | Universidad Nacional de Buenos Aires - Argentina.
+:-------------------------:|:-------------------------:
+![EscuelaCyT](auxiliar/static/fcen.png)  |  ![UNSAM](auxiliar/static/UBA2.png)
 
 
 y del Instituo de Cálculo de la licenciatura de computación del Deprat
