@@ -41,6 +41,19 @@ Las moléculas nacen y mueren durante procesos químicos como los que ocurren du
 $$2 \cdot H_2O \underbrace{\rightarrow}_{\text{electrólisis}} H_2 + O_2$$
 
 que transforma agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$).
+En particular, el cátodo (electródo negativo) produce
+
+$$2 \cdot H_2O+ 2e^− \rigtharrow  H_2 + 2\cdotOH^− $$
+
+
+Aquí, el agua recibe electrones y produce hidrógeno y iones hidroxilo (OH⁻).
+Ánodo (Electrodo Positivo):
+4OH−→O2+2H2O+4e−4OH−→O2​+2H2​O+4e−
+Aquí, los iones hidroxilo se descomponen para producir oxígeno, agua y
+
+
+Luego
+
 
 
 
