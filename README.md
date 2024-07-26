@@ -45,6 +45,10 @@ En particular, el cátodo (electródo negativo) produce
 
 $$2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} $$
 
+Y el ánodo produce,
+
+$$ 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$$
+
 
 Aquí, el agua recibe electrones y produce hidrógeno y iones hidroxilo (OH⁻).
 Ánodo (Electrodo Positivo):
