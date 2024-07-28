@@ -33,19 +33,19 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
 ### Marco Conceptual: ¿Qué (inter)acción genera tu bienestar?.
 
 <em>Las propiedades de los sistemas naturales emergen de la <b>interacción</b> entre los elementos que los componen</em>.
-La palabra átomo proviene de los vocablos griegos $\alpha (sin) y $\tau\omega\mu\omega\nu$ (tomon o corte) y significa indivisible.
-Sin embargo, hoy sabemos que los átomos están compuestos de electrones, protones y neutrones.
-El electrón es la partícula más liviana de un átomo y se ignora si poseé una estructura interna, por lo que se considera una partícula elemental.
+La palabra átomo proviene de los vocablos griegos $\alpha  (sin) y $\tau\omega\mu\omega\nu$ (tomon o corte), por lo que significa indivisible.
+Sin embargo, hoy sabemos que los átomos están compuestos de electrones, protones y neutrones, y que además los protones y neutrones están compuestos de cuarks.
+Los electrones y cuarks forman parte del conjunto de 17 partículas consideradas elementales, sobre las que se ignora si poseen estructura interna.
 
+<br>
 
-
-Las interacciones entre electrones, protones y neutrones produce diversos tipos de átomos.
-
-
+Las 17 partículas elementales conocidas por el modelo estándar se clasifican por sus propiedades de <em>materia</em>, <em>carga</em> y <em>espín</em>.
+Las propiedades de estas 17 formas elementales de la materia interactúan entre sí, formando una enorme diversidad de agregaciones de partículas elementales, cada una con sus propias propiedades emergentes.
+Algunas de estas interacciones o agregaciones son más fuertes o estables y se encuentran presentes en mayor proporción que otras, como son los protones y los neutrones, que luego se agregan para formar los núcleos de los 118 átomos conocidos en la actualidad.
 
 <table>
   <tr>
-    <td width="50%" align="center"><img src="auxiliar/download/atomo_de_oxigeno.png" width="250"/></td>
+    <td width="50%" align="center"><img src="https://raw.githubusercontent.com/glandfried/images/master/atomo_de_oxigeno.png" width="250"/></td>
    </tr>
   <tr>
     <td width="50%" align="center"><b>Átomo de oxígeno</b></td>
