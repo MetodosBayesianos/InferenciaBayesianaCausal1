@@ -30,10 +30,10 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
   </tr>
 </table>
 
-### Marco Conceptual: ¿Qué (inter)acción genera tu bienestar?.
+### ¿Qué (inter)acción genera tu bienestar?.
 
 <em>Las propiedades de los sistemas naturales emergen de la <b>interacción</b> entre los elementos que los componen</em>.
-La palabra átomo proviene de los vocablos griegos $\alpha  (sin) y $\tau\omega\mu\omega\nu$ (tomon o corte), por lo que significa indivisible.
+La palabra átomo proviene de los vocablos griegos $\alpha$  (sin) y $\tau \omega \mu \omega \nu$ (tomon o corte), por lo que significa indivisible.
 Sin embargo, hoy sabemos que los átomos están compuestos de electrones, protones y neutrones, y que además los protones y neutrones están compuestos de cuarks.
 Los electrones y cuarks forman parte del conjunto de 17 partículas consideradas elementales, sobre las que se ignora si poseen estructura interna.
 
