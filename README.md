@@ -78,10 +78,10 @@ Hay menos controversia en considerar a los virus como forma de vida debido a su 
 
 Todas las formas de las materia se encuentran en permanente cambio y movimiento, que pueden ser interpretados como adaptaciones de la materia al entorno.
 Sin embargo, las formas de la materia capaces de reproducirse entran en un proceso singular conocido como selección evolutiva.
-Desde el surgimiento de la primera forma de la materia capaz de reproducirse, hasta el presente, la biomasa de las formas alternativas de vida se expanden y contraen siguiendo una secuencia de tasas de supervivencia y reproducción que dependen de la historia de eventos acción-percepción $\{\emph{ap}_1, ap_2, \dots \}$ entre el agente y su entorno.
+Desde el surgimiento de la primera forma de la materia capaz de reproducirse, hasta el presente, la biomasa de las formas alternativas de vida se expanden y contraen siguiendo una secuencia de tasas de supervivencia y reproducción que dependen de la historia de eventos acción-percepción $\{ap_1, ap_2, \dots \}$ entre el agente y su entorno.
 En su versión discreta,
 
-$$ P(\text{Forma de vida}|\text{Historia de vida} = \{_1, d_2 \})
+$$ \underbrace{ P(\text{Forma de vida}|\text{Historia de vida} }_{\text{Biomasa final}}= \{ap_1, ap_2 , \dots \}) = \underbrace{P(\text{Forma de vida})}_{\text{Biomasa inicial}} P(ap_1|\text{Forma de vida}) P(ap_2|ap_1, \text{Forma de vida})
 $$
 
 
