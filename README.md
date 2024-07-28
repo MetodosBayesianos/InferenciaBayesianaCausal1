@@ -43,7 +43,7 @@ Las 17 partículas elementales conocidas por el modelo estándar se clasifican p
 Las propiedades de estas 17 formas elementales de la materia interactúan entre sí, formando una enorme diversidad de agregaciones de partículas elementales, cada una con sus propias propiedades emergentes.
 Algunas de estas interacciones o agregaciones son más fuertes o estables y se encuentran presentes en mayor proporción que otras, como son los protones y los neutrones, que luego se agregan para formar los núcleos de los 118 átomos conocidos en la actualidad.
 
-<table>
+<table align="center">
   <tr align="center">
     <td width="50%" align="center"><img src="https://raw.githubusercontent.com/glandfried/images/master/atomo_de_oxigeno.png" width="250"/></td>
    </tr>
