@@ -33,15 +33,15 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
 ### ¿Qué (inter)acción genera tu bienestar?.
 
 <em>Las propiedades de los sistemas naturales emergen de la <b>interacción</b> entre los elementos que los componen</em>.
-La palabra átomo proviene de los vocablos griegos $\alpha$  (sin) y $\tau \omega \mu \omega \nu$ (tomon o corte), por lo que significa indivisible.
+La palabra átomo proviene de los vocablos griegos $\alpha$  (sin) y $\tau o \mu o \nu$ (tomon o corte), por lo que significa indivisible.
 Sin embargo, hoy sabemos que los átomos están compuestos de electrones, protones y neutrones, y que además los protones y neutrones están compuestos de cuarks.
-Los electrones y cuarks forman parte del conjunto de 17 partículas consideradas elementales, sobre las que se ignora si poseen estructura interna.
+Los electrones y cuarks forman parte del conjunto de 17 partículas consideradas elementales, sobre las que se ignora su estructura interna.
 
 <br>
 
 Las 17 partículas elementales conocidas por el modelo estándar se clasifican por sus propiedades de <em>materia</em>, <em>carga</em> y <em>espín</em>.
-Las propiedades de estas 17 formas elementales de la materia interactúan entre sí, formando una enorme diversidad de agregaciones de partículas elementales, cada una con sus propias propiedades emergentes.
-Algunas de estas interacciones o agregaciones son más fuertes o estables y se encuentran presentes en mayor proporción que otras, como son los protones y los neutrones, que luego se agregan para formar los núcleos de los 118 átomos conocidos en la actualidad.
+Estas propiedades interactúan entre sí, formando una enorme diversidad de agregaciones de partículas elementales, cada una con sus propias propiedades emergentes.
+Algunas de estas interacciones o agregaciones son más fuertes o estables y se encuentran presentes en mayor proporción que otras, como son los protones y los neutrones, que luego se agregan para formar los núcleos de los $118$ átomos conocidos hasta la actualidad.
 
 <table align="center">
   <tr align="center">
@@ -52,19 +52,17 @@ Algunas de estas interacciones o agregaciones son más fuertes o estables y se e
   </tr>
 </table>
 
+A su vez, las interacciones entre los $118$ átomos puede producir una cantidad no acotada de interacciones o agregaciones conocidas como moléculas, algunas de las cuales son más fuertes o estables que otras y se encuentran presentan en mayor proporción que otras.
+Y a su vez, la interacción o agregación entre moléculas produce lo que conocemos, el agua, y nuestro cuerpo.
 
+<br>
 
-Las interacciones entre átomos produce diversas moléculas.
-Hay solo $118$ átomos conocidos hasta la actualidad, pero hay una enorme diversidad de int
+Las propiedades de la molécula $H_20$ son emergentes de un tipo de interacción o agregación entre los átomos de oxígeno $O$ e hidrógeno $H$, y las propiedades del agua son emergentes de la interacción o agregación entre moléculas $H_20$.
+Las moléculas del agua nacen y mueren durante procesos químicos, como por ejemplo los que ocurren durante la combustión.
+En particular, la electrólisis del agua transforma el agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$).
 
+$$ \text{Cátodo: } 2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−}. \hfill \text{Ánodo: } 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}.$$
 
-Las propiedades de la molécula $H_20$ son emergentes de un tipo de <em>interacción</em> entre las átomos de oxígeno $O$ e hidrógeno $H$, y las propiedades del agua son emergentes de la <em>interacción</em> entre moléculas $H_20$.
-
-Las propiedades de las moléculas de tipo ARN,
-
-Las propiedades de un organismo vivo, una sociedad o un ecosistema también emergen de la <em>interacción</em> entre los elementos de la materia que la componen.
-La interacción que llamamos "agua" nace y muere durante procesos químicos, como por ejemplo los que ocurren durante la combustión.
-En particular, la electrólisis del agua transforma el agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$): en el electrodo negativo $2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} $, y en el positivo $4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$.
 A la inversa, la combustión de hidrógeno y oxígeno gaseosos produce agua y energía (calor o luz), $ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$.
 
 <br>
