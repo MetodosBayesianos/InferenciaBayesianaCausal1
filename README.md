@@ -61,7 +61,7 @@ Las propiedades de la molécula $H_20$ son emergentes de un tipo de interacción
 Las moléculas del agua nacen y mueren durante procesos químicos, como por ejemplo los que ocurren durante la combustión.
 En particular, la electrólisis del agua transforma el agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$).
 
-$$ \text{Cátodo: } 2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−}. \hfill \text{Ánodo: } 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}.$$
+$$ \text{Cátodo: } 2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} \ \ \ \  \text{Ánodo: } 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}.$$
 
 A la inversa, la combustión de hidrógeno y oxígeno gaseosos produce agua y energía (calor o luz), $ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$.
 
