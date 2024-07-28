@@ -30,37 +30,89 @@ La materia `Inferencia Bayesiana Causal 1` (2024, segundo semestre) se imparte c
   </tr>
 </table>
 
-### Marco Conceptual: ¿Qué te hace bien?
+### Marco Conceptual: ¿Qué (inter)acción genera tu bienestar?.
+
+<em>Las propiedades de los sistemas naturales emergen de la <b>interacción</b> entre los elementos que los componen</em>.
+La palabra átomo proviene de los vocablos griegos $\alpha (sin) y $\tau\omega\mu\omega\nu$ (tomon o corte) y significa indivisible.
+Sin embargo, hoy sabemos que los átomos están compuestos de electrones, protones y neutrones.
+El electrón es la partícula más liviana de un átomo y se ignora si poseé una estructura interna, por lo que se considera una partícula elemental.
+
+
+
+Las interacciones entre electrones, protones y neutrones produce diversos tipos de átomos.
+
+
+
+<table>
+  <tr>
+    <td width="50%" align="center"><img src="auxiliar/download/atomo_de_oxigeno.png" width="250"/></td>
+   </tr>
+  <tr>
+    <td width="50%" align="center"><b>Átomo de oxígeno</b></td>
+  </tr>
+</table>
+
+
+
+Las interacciones entre átomos produce diversas moléculas.
+Hay solo $118$ átomos conocidos hasta la actualidad, pero hay una enorme diversidad de int
+
+
+Las propiedades de la molécula $H_20$ son emergentes de un tipo de <em>interacción</em> entre las átomos de oxígeno $O$ e hidrógeno $H$, y las propiedades del agua son emergentes de la <em>interacción</em> entre moléculas $H_20$.
+
+Las propiedades de las moléculas de tipo ARN,
+
+Las propiedades de un organismo vivo, una sociedad o un ecosistema también emergen de la <em>interacción</em> entre los elementos de la materia que la componen.
+La interacción que llamamos "agua" nace y muere durante procesos químicos, como por ejemplo los que ocurren durante la combustión.
+En particular, la electrólisis del agua transforma el agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$): en el electrodo negativo $2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} $, y en el positivo $4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$.
+A la inversa, la combustión de hidrógeno y oxígeno gaseosos produce agua y energía (calor o luz), $ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$.
+
+<br>
+
+Si bien el agua "nace" y "muere", no decimos que el agua sea una forma de vida pues ella no se reproduce.
+Existe menos controversia en considerar a los virus, fragmentos de ARN, como formas vida por su indiscutible capacidad de sobrevivir, reproducirse y diversificarse en el tiempo, adaptándonse a los cambios ambientales que ocurren en su entorno, como el sistema inmune del ser humano.
+Los organismos vivos, a diferencia de los objetos físico y químicos, enfrentan el problema de control del <em>ciclo de intercambios acción-percepción</em> con la naturaleza del cual depende para sobrevivir y reproducirse.
+Este problema real se traduce en un problema de conocimiento: ¿qué formas alternativas de la materia producen ciclos de acción-percepción con la naturaleza que mejoran su supervivencia y reproducción?
+
+<br>
+
+Ante todo, los organismos vivos deben transmitir y actualizar en el tiempo su conocimiento teleológico para intervenir en su favor el ciclo de acción-percepción con la naturaleza.
+Desde el surgimiento de la primera forma de la materia capaz de reproducirse, hasta el presente, las formas alternativas de la materia se expanden y contraen siguiendo una secuencia de tasas de supervivencia y reproducción.
+
+
+la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
+
+
+
+
+La biomasa en la tierra es, en este sentido, el estado del conocimientos causales conocida en el entorno del planeta tierra con probadas capacidades para sobrevivir, para reproducirse o expandirse, y para modificarse o explorar nuevos espacios alternativos de formas de la materia.
+
+
+Los organismos vivos codifican este conocimiento
+
+
+
+
+
+
 
 Desde el surgimiento de la primera forma de la materia capaz de reproducirse hasta el presente, la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
-El problema real de todo organismo vivo es <em>controlar el ciclo acción-percepción</em> del cual depende para sobrevivir y reproducirse.
-Ante todo, los organismos vivos deben <em>transmitir el conocimiento previo</em> a la siguiente generación.
-No parece haber otro medio para transmitir información que no sea transformando la materia, especialmente reproduciendo una versión de la propia forma de la materia.
-Las moléculas nacen y mueren durante procesos químicos como los que ocurren durante la combustión, como por ejemplo la electrólisis del agua
-
-$$2 \cdot H_2O \underbrace{\rightarrow}_{\text{electrólisis}} H_2 + O_2$$
-
-que transforma agua líquida ($2 \cdot H_2O$) en hidrógeno y oxígenos gaseosos ($H_2 + O_2$).
-En particular, el cátodo (electródo negativo) produce
-
-$$2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} $$
-
-Y el ánodo (electródo positivo) produce,
-
-$$4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}$$.
-
-Y luego cuando se produce la combustión de hidrógeno y producción de energía (calor o luz).
-
-$$ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$$
-
-En este proceso no decimos que el agua tenga vida a pesar de que se nazca (se genere) en un caso y muere (se degenere) en el otro caso pues el proceso no reproduce la forma de la materia, sino que la transforma.
-Existe menos controversia respecto de que los virus, fragmentos de ARN, son formas vida pues es indiscutible su capacidad de reproducirse y diversificarse en el tiempo, adaptándonse a los cambios ambientales, como es el sistema inmune del ser humano.
 
 
 
 
 
-La biomasa en la tierra es, en este sentido, la única herencia de conocimientos causales conocida en el entorno del planeta tierra con probadas capacidades para sobrevivir, para reproducirse o expandirse, y para modificarse o explorar nuevos espacios alternativos de formas de la materia.
+
+
+
+
+
+
+
+
+
+
+
 Actualmente, las formas de vida más "simples" (virus, protozoa, archaea y bacterias) representan el 16\% de la biomasa en la tierra, las formas de vida compleja que se alimentan del sol, agua y otro componentes químicos (las plantas) representan el 82\%, y las formas de vida que necesitan alimentarse de otros seres (hongos y animales) representan el 2\%.
 
 <br>
