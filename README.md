@@ -82,7 +82,7 @@ Desde el surgimiento de la primera forma de la materia capaz de reproducirse, ha
 En su versión discreta,
 
 $$\begin{align*}
-& \uperbrace{ P(\text{Forma de vida}|\text{Historia}) }\_{\text{Biomasa final}} = \\
+& \overbrace{ P(\text{Forma de vida}|\text{Historia}) }\_{\text{Biomasa final}} = \\
 & \underbrace{P(\text{Forma de vida})}\_{\text{Biomasa inicial}} \underbrace{P(ap_1|\text{Forma de vida})}_{\text{Adaptración }1} \underbrace{P(ap_2|ap_1, \text{Forma de vida})}\_{\text{Adaptración }2}
 \end{align*}$$
 
