@@ -63,22 +63,39 @@ En particular, la electrólisis del agua transforma el agua líquida ($2 \cdot H
 
 $$\begin{align*}
 & \text{Cátodo: } 2 \cdot H_2O+ 2e^{−} \rightarrow  H_2 + 2\cdot OH^{−} \\
-& \text{Ánodo: } 4OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}.
+& \text{Ánodo: } 4 \cdot OH^{−} \rightarrow O_2​ + 2\cdot H_2​O + 4e^{−}.
 \end{align*}$$
 
-A la inversa, la combustión de hidrógeno y oxígeno gaseosos produce agua y energía (calor o luz), $ 2\cdot H_2​ + O_2​ \rightarrow 2H2​O(g) + \text{energía}$.
+Y a la inversa, la combustión de hidrógeno y oxígeno gaseosos producen átomos de agua y energía en forma de calor o luz.
+
+$$ 2\cdot H_2​ + O_2​ \rightarrow 2\cdot H_2​O + \text{energía}$$.
+
+Si bien el agua nace y muere, no decimos que el agua sea una forma de vida pues ella no se reproduce.
+Pero entre los cientos de millones de moléculas conocidas, existen algunas que tienen la propiedad emergente de reproducirse, como ocurre con los fragmentos de ARN que llamamos virus.
+Hay menos controversia en considerar a los virus como forma de vida debido a su indiscutible capacidad para  reproducirse, sobrevivir y diversificarse en el tiempo, adaptándose a los cambios ambientales que ocurren en su entorno, como el sistema inmune del ser humano.
 
 <br>
 
-Si bien el agua "nace" y "muere", no decimos que el agua sea una forma de vida pues ella no se reproduce.
-Existe menos controversia en considerar a los virus, fragmentos de ARN, como formas vida por su indiscutible capacidad de sobrevivir, reproducirse y diversificarse en el tiempo, adaptándonse a los cambios ambientales que ocurren en su entorno, como el sistema inmune del ser humano.
-Los organismos vivos, a diferencia de los objetos físico y químicos, enfrentan el problema de control del <em>ciclo de intercambios acción-percepción</em> con la naturaleza del cual depende para sobrevivir y reproducirse.
+Todas las formas de las materia se encuentran en permanente cambio y movimiento, que pueden ser interpretados como adaptaciones de la materia al entorno.
+Sin embargo, las formas de la materia capaces de reproducirse entran en un proceso singular conocido como selección evolutiva.
+Desde el surgimiento de la primera forma de la materia capaz de reproducirse, hasta el presente, la biomasa de las formas alternativas de vida se expanden y contraen siguiendo una secuencia de tasas de supervivencia y reproducción que dependen de la historia de eventos acción-percepción $\{\emph{ap}_1, ap_2, \dots \}$ entre el agente y su entorno.
+En su versión discreta,
+
+$$ P(\text{Forma de vida}|\text{Historia de vida} = \{_1, d_2 \})
+$$
+
+
+
+<br>
+
+
+
+
 Este problema real se traduce en un problema de conocimiento: ¿qué formas alternativas de la materia producen ciclos de acción-percepción con la naturaleza que mejoran su supervivencia y reproducción?
 
 <br>
 
 Ante todo, los organismos vivos deben transmitir y actualizar en el tiempo su conocimiento teleológico para intervenir en su favor el ciclo de acción-percepción con la naturaleza.
-Desde el surgimiento de la primera forma de la materia capaz de reproducirse, hasta el presente, las formas alternativas de la materia se expanden y contraen siguiendo una secuencia de tasas de supervivencia y reproducción.
 
 
 la vida adquirió una extraordinaria complejidad en términos de diversificación, cooperación, especialización y heterogeneidad.
